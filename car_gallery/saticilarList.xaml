@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_gallery.saticilarList"
+             Title="saticilarList">
+
+        <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ekle"    Order="Primary" IconImageSource="personadd.png" Clicked="SaticiEkleEvent"/>
+         </ContentPage.ToolbarItems>
+  
+    <ScrollView>
+
+        <CollectionView x:Name="listSaticilr" SelectionMode="Single" Margin="5">
+            <!--<CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"/>
+            </CollectionView.ItemsLayout>-->
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <SwipeView >
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Düzenle" 
+                                           BackgroundColor="Green"
+                                           IconImageSource="edit.png"
+                                           Clicked="SaticiDuzenleEvent"
+                                           CommandParameter="{Binding ID}"/>
+
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Sil" 
+                                           BackgroundColor="Pink"
+                                           IconImageSource="trash.png"
+                                           Clicked="SaticiSilEvent"
+                                           CommandParameter="{Binding ID}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+
+                        <Border Background="Transparent" Margin="5">
+                            <Grid ColumnDefinitions="Auto,*,Auto"  RowDefinitions="2*,1*,1*,0.5*,0.5*">
+
+                                <Border Grid.Column="0" Grid.RowSpan="4" Margin="0,0,4,0">
+
+                                </Border>
+                                <Label Text="{Binding ID}"      FontSize="8"  Grid.Column="1" Grid.Row="3"/>
+
+                                <Label Text="{Binding AdSoyad}" FontSize="20" Grid.Column="1" Grid.Row="0" />
+                                <Label Text="{Binding Tc_no}"      FontSize="8"  Grid.Column="1" Grid.Row="4"/>
+
+                                <Label Text="{Binding Telefon}" FontSize="12" Grid.Column="1" Grid.Row="1" />
+
+                                <Label Text="{Binding Mail}"    FontSize="12" Grid.Column="1" Grid.Row="2" />
+                                <Label Text="{Binding Aders}"      FontSize="8"  Grid.Column="1" Grid.Row="3"/>
+                                <Label x:Name="kl" Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" />
+
+
+                            </Grid>
+
+                            <FlyoutBase.ContextFlyout>
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="Düzenle" 
+                                                   IconImageSource="edit.png"
+                                                   Clicked="SaticiDuzenleEvent"
+                                                   CommandParameter="{Binding ID}"/>
+
+                                    <MenuFlyoutItem Text="Sil" 
+                                                  IconImageSource="trash.png"
+                                                  Clicked="SaticiSilEvent"
+                                                  CommandParameter="{Binding ID}"/>
+
+
+                                </MenuFlyout>
+                            </FlyoutBase.ContextFlyout>
+
+                        </Border>
+                    </SwipeView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </ScrollView>
+</ContentPage>

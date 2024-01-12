@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_gallery.carsList"
+             Title="Müşteri"
+             BackgroundImageSource="Ca.jpg"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ekle"    Order="Primary" IconImageSource="personadd.png" Clicked="KisiEkleEvent"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+
+        <CollectionView x:Name="listKisiler" SelectionMode="Single" Margin="5">
+            <!--<CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"/>
+            </CollectionView.ItemsLayout>-->
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <SwipeView >
+                        <SwipeView.LeftItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Düzenle" 
+                                           BackgroundColor="Black"
+                                           IconImageSource="edit.png"
+                                           Clicked="KisiDuzenleEvent"
+                                           CommandParameter="{Binding ID}"/>
+                               
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Sil" 
+                                           BackgroundColor="Black"
+                                           IconImageSource="trash.png"
+                                           Clicked="KisiSilEvent"
+                                           CommandParameter="{Binding ID}"/>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+
+
+                        <Border Background="Transparent" Margin="5" >
+                            <Grid ColumnDefinitions="Auto,*,Auto"  RowDefinitions="2*,1*,1*,0.5*,0.5*">
+
+                                <Border Grid.Column="0" Grid.RowSpan="4" Margin="0,0,4,0">
+                                  
+                                </Border>
+                                <Label Text="{Binding ID}"      FontSize="8"  Grid.Column="1" Grid.Row="3" BackgroundColor="Aquamarine"/>
+
+                                <Label Text="{Binding AdSoyad}" FontSize="20" Grid.Column="1" Grid.Row="0" BackgroundColor="Aquamarine" />
+                                <Label Text="{Binding Tc_no}"      FontSize="8"  Grid.Column="1" Grid.Row="4" BackgroundColor="Aquamarine"/>
+
+                                <Label Text="{Binding Telefon}" FontSize="12" Grid.Column="1" Grid.Row="1" BackgroundColor="Aquamarine" />
+
+                                <Label Text="{Binding Mail}"    FontSize="12" Grid.Column="1" Grid.Row="2" BackgroundColor="Aquamarine"/>
+                                <Label Text="{Binding Aders}"      FontSize="8"  Grid.Column="1" Grid.Row="3" BackgroundColor="Aquamarine"/>
+                                <Label Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" BackgroundColor="Aquamarine" />
+
+
+                            </Grid>
+
+                            <FlyoutBase.ContextFlyout  >
+                                <MenuFlyout>
+                                    <MenuFlyoutItem Text="Düzenle" 
+                                                   IconImageSource="edit.png"
+                                                   Clicked="KisiDuzenleEvent"
+                                                   CommandParameter="{Binding ID}"/>
+
+                                    <MenuFlyoutItem Text="Sil" 
+                                                   IconImageSource="trash.png"
+                                                   Clicked="KisiSilEvent"
+                                                   CommandParameter="{Binding ID}"/>
+
+                                    
+                                </MenuFlyout>
+                            </FlyoutBase.ContextFlyout>
+
+                        </Border>
+                    </SwipeView>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </ScrollView>
+</ContentPage>
+
+

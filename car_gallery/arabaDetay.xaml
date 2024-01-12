@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_gallery.arabaDetay"
+             Title="arabaDetay">
+    <StackLayout Margin="20">
+        <!-- Araba Adı -->
+        <Entry Placeholder="Araba Adı" />
+
+        <!-- Satıcı ID -->
+
+        <Picker x:Name=""
+               >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>AZZAM</x:String>
+                    <x:String>HUSYEN</x:String>
+
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Marka ID Picker -->
+
+        <Picker x:Name=""
+               >
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>BMW</x:String>
+                    <x:String>TOYTA</x:String>
+
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Araba Rengi -->
+        <Entry Placeholder="Araba Rengi" />
+
+        <!-- Şasi Numarası -->
+        <Entry Placeholder="Şasi Numarası" />
+
+        <!-- Model Yılı -->
+        <Entry Placeholder="Model Yılı" Keyboard="Numeric" />
+
+        <!-- Plaka Numarası -->
+        <Entry Placeholder="Plaka Numarası" />
+
+        <!-- Vites Türü -->
+        <Entry Placeholder="Vites Türü" />
+
+        <!-- Çekiş Tipi -->
+        <Entry Placeholder="Çekiş Tipi" />
+
+        <!-- Yakıt Tipi -->
+        <Entry Placeholder="Yakıt Tipi" />
+
+        <!-- Araba Durumu -->
+        <Entry Placeholder="Araba Durumu" />
+
+        <!-- Kasa Tipi -->
+        <Entry Placeholder="Kasa Tipi" />
+
+        <!-- Motor Numarası -->
+        <Entry Placeholder="Motor Numarası" />
+
+        <!-- Motor Hacmi -->
+        <Entry Placeholder="Motor Hacmi" />
+
+        <!-- Kaydet Butonu -->
+        <Button Text="Kaydet"  />
+        <Button Text="Iptal"  />
+    </StackLayout>
+
+</ContentPage>

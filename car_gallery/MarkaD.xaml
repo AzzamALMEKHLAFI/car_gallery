@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="car_gallery.MarkaD"
+             Title="MarkaD">
+    <Grid
+        Padding="10"
+        ColumnDefinitions="Auto,*"
+        ColumnSpacing="10"
+        RowDefinitions="Auto,Auto"
+        RowSpacing="10">
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="Marka'nin adı:"
+            VerticalOptions="Center" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Marka'nin ülkesi:"
+            VerticalOptions="Center" />
+      
+
+
+        <Entry
+            x:Name="txtmarkaadi"
+            Grid.Row="0"
+            Grid.Column="1"
+            Placeholder="Adı" />
+        <Entry
+            x:Name="txtulke"
+            Grid.Row="1"
+            Grid.Column="1"
+            Placeholder="ulke" />
+        
+ 
+
+
+
+
+        <HorizontalStackLayout
+            Grid.Row="6"
+            Grid.ColumnSpan="2"
+            Padding="30"
+            HorizontalOptions="End"
+            Spacing="20">
+            <Button Clicked="OKClicked" Text="TAMAM" />
+            <Button Clicked="CancelClicked" Text="İPTAL" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>
